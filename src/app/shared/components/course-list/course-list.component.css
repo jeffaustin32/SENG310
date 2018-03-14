@@ -1,0 +1,17 @@
+.noCourses mat-icon {
+    margin-top: 16px;
+    font-size: 48px;
+}
+
+.noCourses {
+    color: #e4e4e4;
+    display: flex; 
+    flex-direction:column; 
+    height:100%; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.noCoursesText {
+    margin-bottom: 16px;
+}

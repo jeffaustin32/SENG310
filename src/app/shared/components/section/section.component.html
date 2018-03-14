@@ -1,0 +1,5 @@
+<div class="section">
+  <span class="sectionNumber">{{ section.type }}{{ section.sectionNumber }}</span>
+  <mat-icon (click)="add(section)" *ngIf="!section.registered && !section.selected">add_circle_outline</mat-icon>
+  <mat-icon (click)="remove(section)" *ngIf="section.selected">remove_circle_outline</mat-icon>
+</div>

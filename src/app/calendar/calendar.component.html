@@ -1,0 +1,16 @@
+<div class="panel">
+  <div class="header">May - August 2018</div>
+  <div class="body">
+    <iq-calendar-week-hours-view
+      [ngSwitch]="'week'"
+      [hourSegments]="2"
+      [dayStartHour]="8"
+      [dayEndHour]="20"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)">
+    </iq-calendar-week-hours-view>
+  </div>
+</div>

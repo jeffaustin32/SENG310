@@ -1,0 +1,22 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let course of courses">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ course.subject }}{{ course.number }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <app-section *ngFor="let section of course.sections" [section]="section"></app-section>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="noCourses" *ngIf="courses.length === 0">
+  
+    <div style="width: 48px">
+      <mat-icon>sentiment_dissatisfied</mat-icon>
+    </div>
+    <div class="noCoursesText">
+      No courses
+    </div>
+  
+</div>

@@ -1,0 +1,63 @@
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.panel {
+    background-color: #fafafa;
+    border: 1px solid #e3e3e3;
+    border-radius: 2px;
+    flex: 1;    
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel > .body {
+    flex: 1;
+    overflow: hidden;
+}
+
+.panel > .header {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: #01579B;
+    border: 1px solid #004376;
+    color: #f5f5f5;
+    padding: 10px;
+}
+
+.column {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+app-calendar > div > div.body > iq-calendar-week-hours-view  div.cal-hour-rows {
+    overflow-x: hidden;
+}
+
+app-calendar > div > div.body > iq-calendar-week-hours-view > div > iq-calendar-week-hours-view-header > div {
+    height: 25px;
+}
+
+app-calendar > div > div.body > iq-calendar-week-hours-view > div > iq-calendar-week-hours-view-header > div > div.cal-header {
+    font-size: 15px;
+    font-weight: normal;
+    padding-top: 3px;
+    color: #adadad;
+}
+
+app-calendar > div > div.body > iq-calendar-week-hours-view > div > iq-calendar-week-hours-view-header > div > div.cal-header span {
+    visibility: hidden;    
+}
+
+app-calendar > div > div.body > iq-calendar-week-hours-view iq-calendar-week-hours-day-view-hour-segment {
+    font-size: 12px;
+    font-weight: normal;
+    color: #adadad;
+}
