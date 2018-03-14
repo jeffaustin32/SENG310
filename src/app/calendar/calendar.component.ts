@@ -63,7 +63,7 @@ export class CalendarComponent implements OnInit {
             start: startDate,
             end: endDate,
             title: `${section.subject}${section.courseNumber}`,
-            color: section.registered ? colors.registered : colors.selected;
+            color: section.registered ? colors.registered : colors.selected
           });
         });
       });
