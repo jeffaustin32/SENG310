@@ -40,4 +40,9 @@ export class CourseListComponent implements OnChanges {
       });
     }
   }
+
+  getInfo(event: MouseEvent, course: Course) {
+    event.stopPropagation();
+    window.open(`https://web.uvic.ca/calendar2018-01/CDs/${course.subject}/${course.number}.html`, '');
+  }
 }

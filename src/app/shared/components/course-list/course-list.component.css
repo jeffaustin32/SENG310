@@ -15,3 +15,13 @@
 .noCoursesText {
     margin-bottom: 16px;
 }
+
+mat-icon.info {
+    transition: color 0.2s ease;
+    color: #adadad;
+}
+
+mat-icon.info:hover {
+    color: #4FC3F7;
+    cursor: pointer;
+}

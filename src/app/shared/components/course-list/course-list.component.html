@@ -2,7 +2,8 @@
   <mat-expansion-panel *ngFor="let course of courses">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ course.subject }}{{ course.number }}
+        <span style="flex: 1">{{ course.subject }}{{ course.number }}</span>
+        <mat-icon class="info" (click)="getInfo($event, course)">info_circle_outline</mat-icon>
       </mat-panel-title>
     </mat-expansion-panel-header>
 
