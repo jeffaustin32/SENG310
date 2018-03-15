@@ -17,3 +17,12 @@ mat-icon:hover {
     color: #4FC3F7;
     cursor: pointer;
 }
+
+mat-icon.warning {
+    color: #FF6F00;
+}
+
+mat-icon.warning:hover {
+    color: #E65100;
+    cursor: not-allowed;
+}

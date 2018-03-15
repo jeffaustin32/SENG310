@@ -5,7 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatExpansionModule, MatButtonModule, MatCheckboxModule, MatListModule,
-  MatDialogModule, MatIconModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS
+  MatDialogModule, MatIconModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS,
+  MatTooltipModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarModule } from 'angular-calendar';
@@ -68,6 +69,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatListModule,
     MatInputModule,
+    MatTooltipModule,
     FormsModule,
     CalendarModule.forRoot(),
     CalendarWeekHoursViewModule,

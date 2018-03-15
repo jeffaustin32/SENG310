@@ -9,6 +9,7 @@ import { Section } from '../../models/section.model';
 })
 export class CourseListComponent implements OnChanges {
   @Input() sections: Section[];
+  @Input() selectedPanel: boolean;
   courses: Course[];
 
   constructor() { }
@@ -23,6 +24,8 @@ export class CourseListComponent implements OnChanges {
 
         // Find if course exists
         this.courses.forEach((course: Course) => {
+          course.missingSection = false;
+
           if (section.subject === course.subject && section.courseNumber === course.number) {
             courseExists = true;
             course.sections.push(section);
@@ -34,9 +37,17 @@ export class CourseListComponent implements OnChanges {
           this.courses.push({
             subject: section.subject,
             sections: [section],
-            number: section.courseNumber
+            number: section.courseNumber,
+            linked: section.linked,
+            missingSection: false
           });
         }
+
+        this.courses.forEach((course: Course) => {
+          if (this.selectedPanel && course.linked && course.sections.length < 2) {
+            course.missingSection = true;
+          }
+        });
       });
     }
   }

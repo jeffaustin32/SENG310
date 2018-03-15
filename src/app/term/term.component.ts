@@ -16,7 +16,9 @@ export class TermComponent implements OnInit {
 
   ngOnInit() {
     this.sectionService.activePersona.subscribe((persona: Persona) => {
-      this.persona = persona;
+      if (persona) {
+        this.persona = persona;
+      }
     });
     this.currentDate = new Date();
   }
@@ -24,5 +26,4 @@ export class TermComponent implements OnInit {
   onSubmitClick(): void {
     this.router.navigate(['/timetable']);
   }
-
 }

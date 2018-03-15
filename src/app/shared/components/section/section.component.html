@@ -1,5 +1,6 @@
 <div class="section">
   <span class="sectionNumber">{{ section.type }}{{ section.sectionNumber }}</span>
-  <mat-icon (click)="add(section)" *ngIf="!section.registered && !section.selected">add_circle_outline</mat-icon>
-  <mat-icon (click)="remove(section)" *ngIf="section.selected">remove_circle_outline</mat-icon>
+  <mat-icon class="warning" *ngIf="section.conflict" [matTooltip]="section.conflict">warning</mat-icon>
+  <mat-icon (click)="add(section)" *ngIf="!section.conflict && !section.registered && !section.selected">add_circle_outline</mat-icon>
+  <mat-icon (click)="remove(section)" *ngIf="!section.conflict && section.selected">remove_circle_outline</mat-icon>
 </div>

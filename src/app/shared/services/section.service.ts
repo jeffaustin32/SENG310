@@ -24,19 +24,67 @@ const personas: Persona[] = [
 @Injectable()
 export class SectionService {
   sections: Subject<Section[]> = new Subject();
-  activePersona: BehaviorSubject<Persona> = new BehaviorSubject(JSON.parse(localStorage.getItem('persona')));
+  activePersona: BehaviorSubject<Persona> = new BehaviorSubject(this.getPersonaAndClasses(null));
   private sectionsData: Section[] = [];
 
-  constructor(private http: HttpClient) {
-    this.getJSON().subscribe((sections: Section[]) => {
-      this.sectionsData = sections;
-      console.log(sections);
-      this.sections.next(this.sectionsData);
-    });
+  constructor(private http: HttpClient) { }
+
+  public getPersonaAndClasses(persona: Persona): Persona {
+    if (!persona) {
+      persona = JSON.parse(localStorage.getItem('persona'));
+    } else {
+      this.activePersona.next(persona);
+    }
+
+    if (persona) {
+      this.http.get(`../../../assets/${persona.netlinkId}.json`)
+        .subscribe((sections: Section[]) => {
+          this.sectionsData = sections;
+          this.checkForConflicts();
+          this.sections.next(this.sectionsData);
+        });
+    }
+
+    return persona;
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get('../../../assets/sections.json');
+  checkForConflicts() {
+    const selectedSections = this.sectionsData.filter((section: Section) => {
+      return section.selected || section.registered;
+    });
+
+    const notSelected = this.sectionsData.filter((section: Section) => {
+      return !section.selected && !section.registered;
+    });
+
+    notSelected.forEach((notSelectedSection: Section) => {
+      notSelectedSection.conflict = '';
+    });
+
+    selectedSections.forEach((selectedSection: Section) => {
+      notSelected.forEach((notSelectedSection: Section) => {
+        const selectedStart = selectedSection.startHour * 60 + selectedSection.startMinute;
+        const selectedEnd = selectedSection.endHour * 60 + selectedSection.endMinute;
+
+        const notSelectedStart = notSelectedSection.startHour * 60 + notSelectedSection.startMinute;
+        const notSelectedEnd = notSelectedSection.endHour * 60 + notSelectedSection.endMinute;
+
+        if (notSelectedStart < selectedEnd && notSelectedEnd > selectedStart) {
+          notSelectedSection.conflict += 'Time conflict!';
+        }
+
+        if (notSelectedSection.subject === selectedSection.subject
+          && notSelectedSection.courseNumber === selectedSection.courseNumber
+          && notSelectedSection.type === selectedSection.type) {
+          if (notSelectedSection.conflict) {
+            notSelectedSection.conflict += '\n';
+          }
+          notSelectedSection.conflict += 'Already selected different section!';
+        }
+      });
+    });
+
+    this.sectionsData = selectedSections.concat(notSelected);
   }
 
   public add(sectionToAdd: Section): void {
@@ -48,6 +96,7 @@ export class SectionService {
     });
 
     // Broadcast updated sections
+    this.checkForConflicts();
     this.sections.next(this.sectionsData);
   }
 
@@ -60,6 +109,7 @@ export class SectionService {
     });
 
     // Broadcast updated sections
+    this.checkForConflicts();
     this.sections.next(this.sectionsData);
   }
 
@@ -77,7 +127,7 @@ export class SectionService {
     }
 
     localStorage.setItem('persona', JSON.stringify(newPersona));
-    this.activePersona.next(newPersona);
+    this.getPersonaAndClasses(newPersona);
     return true;
   }
 

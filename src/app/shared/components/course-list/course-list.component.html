@@ -2,8 +2,9 @@
   <mat-expansion-panel *ngFor="let course of courses">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <span style="flex: 1">{{ course.subject }}{{ course.number }}</span>
+        <span style="flex: 1; justify-content: center; line-height: 24px;">{{ course.subject }}{{ course.number }}</span>
         <mat-icon class="info" (click)="getInfo($event, course)">info_circle_outline</mat-icon>
+        <mat-icon class="warning" *ngIf="course.missingSection" matTooltip="Missing linked section!">warning</mat-icon>
       </mat-panel-title>
     </mat-expansion-panel-header>
 

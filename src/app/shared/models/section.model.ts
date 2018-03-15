@@ -5,6 +5,7 @@ export interface Section {
     required: boolean;
     registered: boolean;
     selected: boolean;
+    conflict: string;
     daysOfWeek: number[];
     startHour: number;
     startMinute: number;
