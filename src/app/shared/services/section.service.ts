@@ -4,11 +4,27 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Section } from '../models/section.model';
+import { Persona } from '../models/persona.model';
+
+const personas: Persona[] = [
+  {
+    netlinkId: 'cknolls',
+    vnumber: 'V00123456',
+    name: 'Cathy Knolls'
+  },
+  {
+    netlinkId: 'palab',
+    vnumber: 'V00654321',
+    name: 'Palashranjan Hari Manidhar Bakshi'
+  }
+];
 
 @Injectable()
 export class SectionService {
   sections: Subject<Section[]> = new Subject();
+  activePersona: BehaviorSubject<Persona> = new BehaviorSubject(JSON.parse(localStorage.getItem('persona')));
   private sectionsData: Section[] = [];
 
   constructor(private http: HttpClient) {
@@ -45,5 +61,28 @@ export class SectionService {
 
     // Broadcast updated sections
     this.sections.next(this.sectionsData);
+  }
+
+  login(netlinkId: string): boolean {
+    let newPersona: Persona = null;
+
+    personas.forEach(persona => {
+      if (persona.netlinkId === netlinkId) {
+        newPersona = persona;
+      }
+    });
+
+    if (!newPersona) {
+      return false;
+    }
+
+    localStorage.setItem('persona', JSON.stringify(newPersona));
+    this.activePersona.next(newPersona);
+    return true;
+  }
+
+  logout() {
+    this.activePersona.next(null);
+    localStorage.setItem('persona', null);
   }
 }

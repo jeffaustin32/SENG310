@@ -1,0 +1,26 @@
+<div style="height: 36.5px; background-color: #000; width:100%; display: flex; padding-top:3px; padding-bottom:3px;">
+  <ul style="padding-top: 10px;">
+    <li>About</li>
+    <li>Admissions</li>
+    <li>Academics</li>
+    <li>Research</li>
+    <li>Library</li>
+    <li>On campus</li>
+    <li>Help</li>
+  </ul>
+  <div style="flex: 1"></div>
+  <ul style="margin-right: 25px;">
+    <li style="margin-right: 1px; background-color: #4f4f4f; padding: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px">Online Tools</li>
+    <li *ngIf="persona" class="navButton signOutButton" (click)="onSignOutClick()">Sign out of UVic</li>
+    <li *ngIf="!persona" class="navButton" (click)="onSignInClick()">Sign in to UVic</li>
+  </ul>
+</div>
+<div style="height: 110px; background-color: #0d5d98; width:100%; background-image: linear-gradient(#002754,#0d5d98); display: flex;">
+
+  <div style="display: flex; justify-items: center">
+    <img src="https://www.uvic.ca/assets/template3-4/images/uvic-logo.png" style="padding-top: 30px; margin-left: 71px; width: 160px; height:56px;"/>
+    
+  </div>
+  <div style="flex: 1"></div>
+  <img src="https://www.uvic.ca/assets/template3-4/images/header-inside-bg.png" style="height: 110px" />
+</div>

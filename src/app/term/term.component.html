@@ -1,0 +1,19 @@
+<section style="display: flex; padding: 40px 71px;">
+
+  <article style="flex: 1">
+    <div style="font-weight: bold; font-size: 20px; margin-bottom: 40px">Registration Term</div>
+    <div>Select a Term: 
+      <select style="margin-left: 10px">
+        <option>Summer Session: May - Aug 2018</option>
+      </select>
+    </div>
+
+    <button style="margin-top: 40px;" (click)="onSubmitClick()">Submit</button>
+  </article>
+
+  <article style="flex: 1">
+    <div>{{ persona.vnumber }} {{ persona.name }}</div>
+    <div>{{ currentDate | date:'medium' }}</div>
+  </article>
+
+</section>

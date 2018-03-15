@@ -4,7 +4,7 @@
         <app-course-list [sections]="sections"></app-course-list>
   </div>
   <div class="footer">
-      <button mat-raised-button color="accent" style="width:100%; margin-bottom: 10px">Filters</button>
-      <button mat-raised-button color="accent" style="width:100%">Subjects of interest</button>
+      <button mat-raised-button color="accent" style="width:100%; margin-bottom: 10px" (click)="openFiltersDialog()">Filters</button>
+      <button mat-raised-button color="accent" style="width:100%" (click)="openSubjectsDialog()">Subjects of interest</button>
   </div>
 </div>

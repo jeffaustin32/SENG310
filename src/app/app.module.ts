@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MatExpansionModule, MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatExpansionModule, MatButtonModule, MatCheckboxModule, MatListModule,
+  MatDialogModule, MatIconModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS
+} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarWeekHoursViewModule } from 'angular-calendar-week-hours-view';
@@ -16,6 +21,24 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { SectionService } from './shared/services/section.service';
 import { CourseListComponent } from './shared/components/course-list/course-list.component';
 import { SectionComponent } from './shared/components/section/section.component';
+import { FiltersComponent } from './elective-courses/filters/filters.component';
+import { SubjectsComponent } from './elective-courses/subjects/subjects.component';
+import { LoginComponent } from './login/login.component';
+import { ToolBarComponent } from './tool-bar/tool-bar.component';
+import { TermComponent } from './term/term.component';
+import { TimetableComponent } from './timetable/timetable.component';
+
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'term', component: TermComponent },
+  { path: 'timetable', component: TimetableComponent },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  { path: '**', component: LoginComponent }
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +49,13 @@ import { SectionComponent } from './shared/components/section/section.component'
     SelectedCoursesComponent,
     CalendarComponent,
     CourseListComponent,
-    SectionComponent
+    SectionComponent,
+    FiltersComponent,
+    SubjectsComponent,
+    LoginComponent,
+    ToolBarComponent,
+    TermComponent,
+    TimetableComponent
   ],
   imports: [
     BrowserModule,
@@ -37,11 +66,23 @@ import { SectionComponent } from './shared/components/section/section.component'
     MatCheckboxModule,
     MatDialogModule,
     MatIconModule,
+    MatListModule,
+    MatInputModule,
+    FormsModule,
     CalendarModule.forRoot(),
-    CalendarWeekHoursViewModule
+    CalendarWeekHoursViewModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false } // <-- debugging purposes only
+    )
   ],
   providers: [
-    SectionService
+    SectionService,
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
+  ],
+  entryComponents: [
+    FiltersComponent,
+    SubjectsComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,22 @@
+mat-icon {
+    transition: color 0.2s ease;
+}
+
+mat-icon:hover {
+    color: #4FC3F7;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+    margin-top: 0;
+}
+
+li {
+    padding: 8px 24px;
+    transition: background-color 0.2s ease;
+}
+
+li:hover {
+    background-color: #eee;
+}

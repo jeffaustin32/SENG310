@@ -1,0 +1,47 @@
+<div style="padding-left: 71px; display: flex">
+  <section style="flex:1">
+    <div style="font-size: 40px">Sign in to UVic</div>
+    <div>By signing in you will be authorized to access your applications and web sites that use the Sign in Service. Use is subject
+      to but not limited to the policies and guidelines listed below in Policies and guidelines.</div>
+
+    <article style="display: flex; margin-top:15px">
+      <div style="flex: 1">
+        <div>NetLink ID:</div>
+        <input style="margin-top: 5px; width: 100%; height: 20px; line-height: 20px" [(ngModel)]="netlinkId" (keydown)="onKeyDown($event)"/>
+        <div style="margin-top: 20px">Password:</div>
+        <input style="margin-top: 5px; width: 100%; height: 20px; line-height: 20px" />
+
+        <div style="margin-top: 20px; font-weight: bold">Sign in options:</div>
+        <div style="margin-top: 5px; margin-bottom: 5px;">
+          <input type="checkbox" /> Keep me signed in for 8 hours
+        </div>
+
+        <div class="loginButton" (click)="onLoginClick()">Sign in</div>
+      </div>
+
+      <div style="flex: 1; margin-left: 20px">
+        <span style="font-size: 22px">Protect your NetLink ID</span>
+        <ul style="padding-left: 15px; margin-top:0">
+          <li>Watch out for sites or emails that pretend to be legitimate and ask for your NetLink ID and password.</li>
+          <li>Report suspicious requests for your NetLink ID and password.</li>
+          <li>Learn more about how to protect your account and computer.</li>
+        </ul>
+      </div>
+
+    </article>
+
+  </section>
+
+  <section style="width: 200px; margin-right: 71px;">
+    <img src="assets/service_status.PNG" style="height: 275px;">
+  </section>
+</div>
+
+<div style="margin-top:50px; margin-left: 71px; color: grey">
+  <div>
+    Undeclared Major, NetLink ID: "cknolls"
+  </div>
+  <div>
+    Declared Major, NetLink ID: "palab"
+  </div>
+</div>

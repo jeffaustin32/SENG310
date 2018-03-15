@@ -1,0 +1,35 @@
+li {
+    float: left;
+    color: #FFF;
+    margin: 0px 5px;
+    font-size: 12px;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;    
+}
+
+.navButton {
+    margin-left: 1px;
+    background-color: #1b5911;
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navButton:hover {
+    background-color: #28A228;
+    color: #333;
+    cursor: pointer;
+}
+
+.navButton.signOutButton {
+    background-color: #000;
+}
+
+.navButton.signOutButton:hover {
+    background-color: #777;
+    color: #fff;
+}
