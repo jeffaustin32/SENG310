@@ -2,7 +2,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "101",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -21,7 +21,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "101",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -40,7 +40,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "101",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -61,7 +61,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "102",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -80,7 +80,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "102",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -99,7 +99,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "102",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -120,7 +120,7 @@
     {
         "subject": "THEA",
         "courseNumber": "150",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -139,7 +139,7 @@
     {
         "subject": "THEA",
         "courseNumber": "150",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,

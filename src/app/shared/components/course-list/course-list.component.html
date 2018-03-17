@@ -8,7 +8,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <app-section *ngFor="let section of course.sections" [section]="section"></app-section>
+    <app-section *ngFor="let section of course.sections" [section]="section" (mouseleave)="onMouseLeave(section)" (mouseenter)="onMouseEnter(section)"></app-section>
   </mat-expansion-panel>
 </mat-accordion>
 

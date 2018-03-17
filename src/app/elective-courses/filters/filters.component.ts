@@ -1,5 +1,8 @@
 import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { SubjectsService } from '../../shared/services/subjects.service';
+import { Filter } from '../../shared/models/filter.model';
+import { Subject } from '../../shared/models/subject.model';
 
 @Component({
   selector: 'app-filters',
@@ -7,13 +10,27 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent {
+  filter: Filter;
+  subjects: Subject[] = [];
+  value: any;
 
   constructor(
     public dialogRef: MatDialogRef<FiltersComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any) { }
+    private subjectsService: SubjectsService,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.filter = data.filter;
 
-  onNoClick(): void {
-    this.dialogRef.close();
+    this.subjectsService.subjects.subscribe((subjects: Subject[]) => {
+      this.filter.subjects = subjects;
+    });
+
+    this.dialogRef.beforeClose().subscribe(() => {
+      this.dialogRef.close(this.filter);
+    });
+  }
+
+  close() {
+    this.dialogRef.close(this.filter);
   }
 
 }

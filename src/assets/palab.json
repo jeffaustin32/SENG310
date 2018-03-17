@@ -2,7 +2,7 @@
     {
         "subject": "BCMB",
         "courseNumber": "301A",
-        "courseLevel": "300",
+        "courseLevel": "l300",
         "required": true,
         "registered": false,
         "selected": false,
@@ -21,7 +21,7 @@
     {
         "subject": "BIOC",
         "courseNumber": "300A",
-        "courseLevel": "300",
+        "courseLevel": "l300",
         "required": true,
         "registered": false,
         "selected": false,
@@ -40,7 +40,7 @@
     {
         "subject": "CHEM",
         "courseNumber": "222",
-        "courseLevel": "200",
+        "courseLevel": "l200",
         "required": true,
         "registered": false,
         "selected": false,
@@ -59,7 +59,7 @@
     {
         "subject": "CHEM",
         "courseNumber": "222",
-        "courseLevel": "200",
+        "courseLevel": "l200",
         "required": true,
         "registered": false,
         "selected": false,
@@ -82,7 +82,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "101",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -101,7 +101,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "101",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -120,7 +120,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "101",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -141,7 +141,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "102",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -160,7 +160,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "102",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -179,7 +179,7 @@
     {
         "subject": "ASTR",
         "courseNumber": "102",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,
@@ -200,7 +200,7 @@
     {
         "subject": "THEA",
         "courseNumber": "150",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": true,
         "selected": false,
@@ -219,7 +219,7 @@
     {
         "subject": "THEA",
         "courseNumber": "150",
-        "courseLevel": "100",
+        "courseLevel": "l100",
         "required": false,
         "registered": false,
         "selected": false,

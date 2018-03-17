@@ -61,3 +61,11 @@ app-calendar > div > div.body > iq-calendar-week-hours-view iq-calendar-week-hou
     font-weight: normal;
     color: #adadad;
 }
+
+.panel > .header label > div > div.mat-checkbox-frame {
+    border-color: #fff;
+}
+
+mat-tab-body-wrapper {
+    min-height: 400px;
+}

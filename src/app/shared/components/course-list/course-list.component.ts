@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Course } from '../../models/course.model';
 import { Section } from '../../models/section.model';
 
@@ -10,6 +10,8 @@ import { Section } from '../../models/section.model';
 export class CourseListComponent implements OnChanges {
   @Input() sections: Section[];
   @Input() selectedPanel: boolean;
+  @Output() sectionMouseEnter: EventEmitter<Section> = new EventEmitter();
+  @Output() sectionMouseLeave: EventEmitter<Section> = new EventEmitter();
   courses: Course[];
 
   constructor() { }
@@ -50,6 +52,14 @@ export class CourseListComponent implements OnChanges {
         });
       });
     }
+  }
+
+  onMouseEnter(section: Section) {
+    this.sectionMouseEnter.emit(section);
+  }
+
+  onMouseLeave(section: Section) {
+    this.sectionMouseLeave.emit(section);
   }
 
   getInfo(event: MouseEvent, course: Course) {

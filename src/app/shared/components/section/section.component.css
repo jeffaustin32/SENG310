@@ -11,6 +11,7 @@
 
 mat-icon {
     transition: color 0.2s ease;
+    color: #7f7f7f;
 }
 
 mat-icon:hover {

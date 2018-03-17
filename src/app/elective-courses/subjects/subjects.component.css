@@ -20,3 +20,13 @@ li {
 li:hover {
     background-color: #eee;
 }
+
+.body {
+    max-height: 330px;
+    min-height: 330px;
+    overflow-y: auto;
+}
+
+mat-form-field div.mat-input-wrapper.mat-form-field-wrapper div.mat-input-flex.mat-form-field-flex div.mat-input-infix.mat-form-field-infix {
+    margin-left: 10px;
+}

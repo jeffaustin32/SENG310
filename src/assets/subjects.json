@@ -1,0 +1,437 @@
+[
+    { 
+        "abr": "AGEI",
+        "name": "Ageing (AGEI)",
+        "selected": true
+    },
+    { 
+        "abr": "ANTH",
+        "name": "Anthropology (ANTH)",
+        "selected": true
+    },
+    { 
+        "abr": "ART",
+        "name": "Art (ART)",
+        "selected": true
+    },
+    { 
+        "abr": "AE",
+        "name": "Art Education (AE)",
+        "selected": true
+    },
+    { 
+        "abr": "AHVS",
+        "name": "Art History & Visual Studies (AHVS)",
+        "selected": true
+    },
+    { 
+        "abr": "ASTR",
+        "name": "Astronomy (ASTR)",
+        "selected": true
+    },
+    { 
+        "abr": "BIOC",
+        "name": "Biochemistry (BIOC)",
+        "selected": true
+    },
+    { 
+        "abr": "BCMB",
+        "name": "Biochemistry and Microbiology (BCMB)",
+        "selected": true
+    },
+    { 
+        "abr": "BIOL",
+        "name": "Biology (BIOL)",
+        "selected": true
+    },
+    { 
+        "abr": "BME",
+        "name": "Biomedical Engineering (BME)",
+        "selected": true
+    },
+    { 
+        "abr": "BUS",
+        "name": "Business (BUS)",
+        "selected": true
+    },
+    { 
+        "abr": "CS",
+        "name": "Canadian Studies (CS)",
+        "selected": true
+    },
+    { 
+        "abr": "CHEM",
+        "name": "Chemistry (CHEM)",
+        "selected": true
+    },
+    { 
+        "abr": "CYC",
+        "name": "Child and Youth Care (CYC)",
+        "selected": true
+    },
+    { 
+        "abr": "CIVE",
+        "name": "Civil Engineering (CIVE)",
+        "selected": true
+    },
+    { 
+        "abr": "COM",
+        "name": "Commerce (COM)",
+        "selected": true
+    },
+    { 
+        "abr": "CD",
+        "name": "Community Development (CD)",
+        "selected": true
+    },
+    { 
+        "abr": "CSC",
+        "name": "Computer Science (CSC)",
+        "selected": true
+    },
+    { 
+        "abr": "EDCI",
+        "name": "Curriculum and Instruction (EDCI)",
+        "selected": true
+    },
+    { 
+        "abr": "DHUM",
+        "name": "Digital Humanities (DHUM)",
+        "selected": true
+    },
+    { 
+        "abr": "DSST",
+        "name": "Disability Studies (DSST)",
+        "selected": true
+    },
+    { 
+        "abr": "DR",
+        "name": "Dispute Resolution (DR)",
+        "selected": true
+    },
+    { 
+        "abr": "EOS",
+        "name": "Earth and Ocean Sciences (EOS)",
+        "selected": true
+    },
+    { 
+        "abr": "ECON",
+        "name": "Economics (ECON)",
+        "selected": true
+    },
+    { 
+        "abr": "ED",
+        "name": "Ed Psyc and Leadership Studies (ED-D)",
+        "selected": true
+    },
+    { 
+        "abr": "ECE",
+        "name": "Electrical & Computer Engineer (ECE)",
+        "selected": true
+    },
+    { 
+        "abr": "ENGR",
+        "name": "Engineering (ENGR)",
+        "selected": true
+    },
+    { 
+        "abr": "ENGL",
+        "name": "English (ENGL)",
+        "selected": true
+    },
+    { 
+        "abr": "ENT",
+        "name": "Entrepreneurship and Small Bus (ENT)",
+        "selected": true
+    },
+    { 
+        "abr": "ER",
+        "name": "Environmental Restoration (ER)",
+        "selected": true
+    },
+    { 
+        "abr": "ES",
+        "name": "Environmental Studies (ES)",
+        "selected": true
+    },
+    { 
+        "abr": "EPHE",
+        "name": "Exercise Sc, Phys & Health Ed (EPHE)",
+        "selected": true
+    },
+    { 
+        "abr": "FRAN",
+        "name": "French (FRAN) (FRAN)",
+        "selected": true
+    },
+    { 
+        "abr": "GEOG",
+        "name": "Geography (GEOG)",
+        "selected": true
+    },
+    { 
+        "abr": "GMST",
+        "name": "Germanic Studies (GMST)",
+        "selected": true
+    },
+    { 
+        "abr": "GS",
+        "name": "Graduate Studies (GS)",
+        "selected": true
+    },
+    { 
+        "abr": "GRS",
+        "name": "Greek and Roman Studies (GRS)",
+        "selected": true
+    },
+    { 
+        "abr": "HINF",
+        "name": "Health Information Science (HINF)",
+        "selected": true
+    },
+    { 
+        "abr": "HLTH",
+        "name": "Health and Community Services (HLTH)",
+        "selected": true
+    },
+    { 
+        "abr": "HSTR",
+        "name": "History (HSTR)",
+        "selected": true
+    },
+    { 
+        "abr": "ICDG",
+        "name": "Indigenous Com Dev Governance (ICDG)",
+        "selected": true
+    },
+    { 
+        "abr": "IED",
+        "name": "Indigenous Education (IED)",
+        "selected": true
+    },
+    { 
+        "abr": "IGOV",
+        "name": "Indigenous Governance (IGOV)",
+        "selected": true
+    },
+    { 
+        "abr": "INGH",
+        "name": "Indigenous Peoples Health (INGH)",
+        "selected": true
+    },
+    { 
+        "abr": "IET",
+        "name": "Intercultural Education and Tr (IET)",
+        "selected": true
+    },
+    { 
+        "abr": "INTD",
+        "name": "Interdisciplinary (INTD)",
+        "selected": true
+    },
+    { 
+        "abr": "IB",
+        "name": "International Business (IB)",
+        "selected": true
+    },
+    { 
+        "abr": "INTS",
+        "name": "International Health Studies (INTS)",
+        "selected": true
+    },
+    { 
+        "abr": "ITAL",
+        "name": "Italian (ITAL)",
+        "selected": true
+    },
+    { 
+        "abr": "KINE",
+        "name": "Kinesiology (KINE)",
+        "selected": true
+    },
+    { 
+        "abr": "LAW",
+        "name": "Law (LAW)",
+        "selected": true
+    },
+    { 
+        "abr": "LING",
+        "name": "Linguistics (LING)",
+        "selected": true
+    },
+    { 
+        "abr": "MRNE",
+        "name": "Marine Science (MRNE)",
+        "selected": true
+    },
+    { 
+        "abr": "MGB",
+        "name": "Masters of Global Business (MGB)",
+        "selected": true
+    },
+    { 
+        "abr": "MBA",
+        "name": "Masters-Business Administratio (MBA)",
+        "selected": true
+    },
+    { 
+        "abr": "MATH",
+        "name": "Math (MATH)",
+        "selected": true
+    },
+    { 
+        "abr": "MECH",
+        "name": "Mechanical Engineering (MECH)",
+        "selected": true
+    },
+    { 
+        "abr": "MEDI",
+        "name": "Medieval Studies (MEDI)",
+        "selected": true
+    },
+    { 
+        "abr": "MICR",
+        "name": "Microbiology (MICR)",
+        "selected": true
+    },
+    { 
+        "abr": "MUS",
+        "name": "Music (MUS)",
+        "selected": true
+    },
+    { 
+        "abr": "NRSC",
+        "name": "Neuroscience (NRSC)",
+        "selected": true
+    },
+    { 
+        "abr": "NURS",
+        "name": "Nursing (NURS)",
+        "selected": true
+    },
+    { 
+        "abr": "NUNP",
+        "name": "Nursing Practitioners (NUNP)",
+        "selected": true
+    },
+    { 
+        "abr": "NUHI",
+        "name": "Nursing/Health Info Science (NUHI)",
+        "selected": true
+    },
+    { 
+        "abr": "PAAS",
+        "name": "Pacific and Asian Studies (PAAS)",
+        "selected": true
+    },
+    { 
+        "abr": "PHIL",
+        "name": "Philosophy (PHIL)",
+        "selected": true
+    },
+    { 
+        "abr": "PHYS",
+        "name": "Physics (PHYS)",
+        "selected": true
+    },
+    { 
+        "abr": "POLI",
+        "name": "Political Science (POLI)",
+        "selected": true
+    },
+    { 
+        "abr": "PSYC",
+        "name": "Psychology (PSYC)",
+        "selected": true
+    },
+    { 
+        "abr": "ADMN",
+        "name": "Public Administration (ADMN)",
+        "selected": true
+    },
+    { 
+        "abr": "PADR",
+        "name": "Public Admn & Dispute Resolutn (PADR)",
+        "selected": true
+    },
+    { 
+        "abr": "PHSP",
+        "name": "Public Health & Social Policy (PHSP)",
+        "selected": true
+    },
+    { 
+        "abr": "RHED",
+        "name": "Recreation and Health (RHED)",
+        "selected": true
+    },
+    { 
+        "abr": "RS",
+        "name": "Religious Studies (RS)",
+        "selected": true
+    },
+    { 
+        "abr": "SMGT",
+        "name": "Service Management (SMGT)",
+        "selected": true
+    },
+    { 
+        "abr": "SLST",
+        "name": "Slavic Studies (SLST)",
+        "selected": true
+    },
+    { 
+        "abr": "SDH",
+        "name": "Social Dimensions of Health (SDH)",
+        "selected": true
+    },
+    { 
+        "abr": "SOCW",
+        "name": "Social Work (SOCW)",
+        "selected": true
+    },
+    { 
+        "abr": "SOCI",
+        "name": "Sociology (SOCI)",
+        "selected": true
+    },
+    { 
+        "abr": "SENG",
+        "name": "Software Engineering (SENG)",
+        "selected": true
+    },
+    { 
+        "abr": "SPAN",
+        "name": "Spanish (SPAN)",
+        "selected": true
+    },
+    { 
+        "abr": "STAT",
+        "name": "Statistics (STAT)",
+        "selected": true
+    },
+    { 
+        "abr": "SPP",
+        "name": "Study in Policy and Practice (SPP)",
+        "selected": true
+    },
+    { 
+        "abr": "THEA",
+        "name": "Theatre (THEA)",
+        "selected": true
+    },
+    { 
+        "abr": "VIRS",
+        "name": "Visiting Research (VIRS)",
+        "selected": true
+    },
+    { 
+        "abr": "WKEX",
+        "name": "Work Experience (WKEX)",
+        "selected": true
+    },
+    { 
+        "abr": "WRIT",
+        "name": "Writing (WRIT)",
+        "selected": true
+    }
+]

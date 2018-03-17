@@ -1,4 +1,5 @@
 export interface Subject {
     name: string;
-    abbreviation: string;
+    abr: string;
+    selected: boolean;
 }

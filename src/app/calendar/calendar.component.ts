@@ -38,6 +38,10 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.sectionService.sections.subscribe((sections: Section[]) => {
+      if (!sections) {
+        return;
+      }
+
       // Only keep registered and selected sections
       sections = sections.filter((section: Section) => {
         return section.registered || section.selected;
@@ -62,6 +66,7 @@ export class CalendarComponent implements OnInit {
           this.events.push({
             start: startDate,
             end: endDate,
+            id: section.crn,
             title: `${section.subject}${section.courseNumber}`,
             color: section.registered ? colors.registered : colors.selected
           });
@@ -70,6 +75,49 @@ export class CalendarComponent implements OnInit {
 
       this.refresh.next();
     });
+  }
+
+  onMouseEnter(section: Section) {
+    let startDate = new Date();
+    startDate.setHours(section.startHour);
+    startDate.setMinutes(section.startMinute);
+
+    let endDate = new Date();
+    endDate.setHours(section.endHour);
+    endDate.setMinutes(section.endMinute);
+
+    section.daysOfWeek.forEach((dayOfWeek: number) => {
+      startDate = addDays(startDate, dayOfWeek - startDate.getDay());
+      endDate = addDays(endDate, dayOfWeek - endDate.getDay());
+
+      this.events.push({
+        start: startDate,
+        end: endDate,
+        id: section.crn,
+        title: `${section.subject}${section.courseNumber}`,
+        color: colors.unavailable
+      });
+    });
+
+    this.refresh.next();
+  }
+
+  onMouseLeave(section: Section) {
+    let foundOccurence = true;
+    while (foundOccurence) {
+      foundOccurence = false;
+
+      const index = this.events.findIndex((event: CalendarEvent) => {
+        if (event.id === section.crn) {
+          foundOccurence = true;
+          return true;
+        }
+      });
+
+      this.events.splice(index, 1);
+    }
+
+    this.refresh.next();
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -84,11 +132,9 @@ export class CalendarComponent implements OnInit {
     //     this.viewDate = date;
     //   }
     // }
-    console.log('Day clicked');
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    console.log(action, event);
   }
 
   // addEvent(): void {
@@ -107,6 +153,5 @@ export class CalendarComponent implements OnInit {
   // }
 
   hourSegmentClicked(event) {
-    console.log(event);
   }
 }

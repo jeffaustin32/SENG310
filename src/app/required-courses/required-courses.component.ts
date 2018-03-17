@@ -15,6 +15,10 @@ export class RequiredCoursesComponent implements OnInit {
 
   ngOnInit() {
     this.sectionService.sections.subscribe((sections: Section[]) => {
+      if (!sections) {
+        return;
+      }
+
       this.sections = sections.filter((section: Section) => {
         return section.required && !section.registered && !section.selected;
       });

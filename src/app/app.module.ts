@@ -6,20 +6,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatExpansionModule, MatButtonModule, MatCheckboxModule, MatListModule,
   MatDialogModule, MatIconModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS,
-  MatTooltipModule
+  MatTooltipModule, MatRadioModule, MatTabsModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarWeekHoursViewModule } from 'angular-calendar-week-hours-view';
 
+// Components
 import { AppComponent } from './app.component';
 import { RequiredCoursesComponent } from './required-courses/required-courses.component';
 import { ElectiveCoursesComponent } from './elective-courses/elective-courses.component';
 import { RegisteredCoursesComponent } from './registered-courses/registered-courses.component';
 import { SelectedCoursesComponent } from './selected-courses/selected-courses.component';
 import { CalendarComponent } from './calendar/calendar.component';
-
-import { SectionService } from './shared/services/section.service';
 import { CourseListComponent } from './shared/components/course-list/course-list.component';
 import { SectionComponent } from './shared/components/section/section.component';
 import { FiltersComponent } from './elective-courses/filters/filters.component';
@@ -28,6 +27,10 @@ import { LoginComponent } from './login/login.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import { TermComponent } from './term/term.component';
 import { TimetableComponent } from './timetable/timetable.component';
+
+// Services
+import { SectionService } from './shared/services/section.service';
+import { SubjectsService } from './shared/services/subjects.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -70,6 +73,8 @@ const appRoutes: Routes = [
     MatListModule,
     MatInputModule,
     MatTooltipModule,
+    MatRadioModule,
+    MatTabsModule,
     FormsModule,
     CalendarModule.forRoot(),
     CalendarWeekHoursViewModule,
@@ -80,6 +85,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     SectionService,
+    SubjectsService,
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
   ],
   entryComponents: [

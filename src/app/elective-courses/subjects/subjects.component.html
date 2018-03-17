@@ -1,31 +1,36 @@
-<div style="display: flex">
-  <div class="panel">
-    <div class="header">All Subjects</div>
-    <div class="body">
-      <mat-form-field style="width: 100%">
-        <input matInput placeholder="Filter subjects">
-      </mat-form-field>
-      <ul>
-        <li style="display: flex" *ngFor="let subject of availableSubjects">
-          <span style="flex: 1">{{ subject.name }}({{ subject.abbreviation }})</span>
-          <mat-icon>add_circle_outline</mat-icon>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="panel" style="margin-left:24px">
-    <div class="header">Selected Subjects</div>
-    <div class="body">
-      <ul>
-          <li style="display: flex" *ngFor="let subject of selectedSubjects">
-            <span style="flex: 1">{{ subject.name }}({{ subject.abbreviation }})</span>
-            <mat-icon>add_circle_outline</mat-icon>
-          </li>
-      </ul>
-    </div>
-  </div>
+<div mat-dialog-title>
+  Subjects of interest
 </div>
 
+<mat-dialog-content>
+  <div style="display: flex">
+
+    <div class="panel">
+      <div class="header">All Subjects</div>
+      <div class="body">
+        <ul class="subjectsList">
+          <li style="display: flex" *ngFor="let subject of availableSubjects">
+            <span style="flex: 1">{{ subject.name }}({{ subject.abbreviation }})</span>
+            <mat-icon (click)="onAddSubjectClick(subject)">add_circle_outline</mat-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-left:24px">
+      <div class="header">Selected Subjects</div>
+      <div class="body">
+        <ul class="subjectsList">
+          <li style="display: flex" *ngFor="let subject of selectedSubjects">
+            <span style="flex: 1">{{ subject.name }}({{ subject.abbreviation }})</span>
+            <mat-icon (click)="onRemoveSubjectClick(subject)">remove_circle_outline</mat-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
 <mat-dialog-actions style="align-items: center">
-    <button mat-raised-button color="accent">Done</button>
+  <button mat-raised-button color="accent" (click)="close()">Done</button>
 </mat-dialog-actions>

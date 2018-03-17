@@ -23,7 +23,7 @@ const personas: Persona[] = [
 
 @Injectable()
 export class SectionService {
-  sections: Subject<Section[]> = new Subject();
+  sections: BehaviorSubject<Section[]> = new BehaviorSubject(null);
   activePersona: BehaviorSubject<Persona> = new BehaviorSubject(this.getPersonaAndClasses(null));
   private sectionsData: Section[] = [];
 
