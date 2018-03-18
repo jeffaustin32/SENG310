@@ -1,0 +1,47 @@
+<section style="display: flex; flex-direction: column; padding: 40px 71px;">
+
+  <div style="display: flex;margin-bottom: 25px;">
+    <article style="flex: 1;">
+      <div style="font-weight: bold; font-size: 20px; margin-bottom: 40px">Add or Drop Classes</div>
+    </article>
+
+    <article style="flex: 1">
+      <div>{{ persona?.vnumber }} {{ persona?.name }}</div>
+      <div>Summer Session: May - Aug 2018</div>
+      <div>{{ currentDate | date:'medium' }}</div>
+    </article>
+  </div>
+
+  <section style="margin-bottom:25px">
+    <div style="margin-bottom:10px">
+      <span style="font-weight:bold">PREREQUISITES</span> Check prerequisites listed in the Calendar course descriptions before registering. You may be
+      dropped from a course at the start of term if you haven’t completed the prerequisite(s).</div>
+    <div style="margin-bottom:10px">
+      <span style="font-weight:bold">ACADEMIC WRITING REQUIREMENT (AWR)</span> A self-placement questionnaire can help you choose an English course at the
+      appropriate level. More information about the AWR is available online.</div>
+    <div style="margin-bottom:10px">
+      <span style="font-weight:bold">STUDENT LOANS AND GRANTS?</span> Reducing your course load may impact your eligibility for government student aid.
+      Check with Student Awards and Financial Aid before dropping any courses.</div>
+    <div style="margin-bottom:10px">NEED HELP?</div>
+    <div style="margin-bottom:10px">
+      <span style="font-weight:bold">DROP DATES FOR FEE REDUCTION</span> can be checked on your
+      <span>Administrative Transcript</span> by hovering over</div>
+  </section>
+
+  <section>
+    <div style="font-size:12px; font-weight: bold">Add Classes Worksheet</div>
+    <hr style="margin-bottom:15px;">
+    <div>CRNs</div>
+    <div style="margin-bottom:15px;">
+      <input style="margin-right:30px" *ngFor="let session of selectedSessions" [value]="session.crn" />
+    </div>
+    <div style="font-size:10px">Click the Submit Changes button below to process all adds and drops. Please view your Current Schedule after submitting
+      to verify that your current registration is accurate and correct.</div>
+    <div>
+      <button>Submit Changes</button>
+      <button>Class Search</button>
+      <button>Reset</button>
+    </div>
+  </section>
+
+</section>

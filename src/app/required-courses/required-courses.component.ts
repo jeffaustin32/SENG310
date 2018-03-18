@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SectionService } from '../shared/services/section.service';
 import { Section } from '../shared/models/section.model';
 
@@ -8,6 +8,8 @@ import { Section } from '../shared/models/section.model';
   styleUrls: ['./required-courses.component.css']
 })
 export class RequiredCoursesComponent implements OnInit {
+  @Output() sectionMouseEnter: EventEmitter<Section> = new EventEmitter();
+  @Output() sectionMouseLeave: EventEmitter<Section> = new EventEmitter();
 
   sections: Section[] = [];
 
@@ -25,4 +27,11 @@ export class RequiredCoursesComponent implements OnInit {
     });
   }
 
+  onMouseEnter(section: Section) {
+    this.sectionMouseEnter.emit(section);
+  }
+
+  onMouseLeave(section: Section) {
+    this.sectionMouseLeave.emit(section);
+  }
 }

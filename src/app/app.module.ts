@@ -27,15 +27,20 @@ import { LoginComponent } from './login/login.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import { TermComponent } from './term/term.component';
 import { TimetableComponent } from './timetable/timetable.component';
+import { RegisterComponent } from './register/register.component';
 
 // Services
 import { SectionService } from './shared/services/section.service';
 import { SubjectsService } from './shared/services/subjects.service';
 
+// Pipes
+import { TextFilter } from './shared/pipes/text.pipe';
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'term', component: TermComponent },
   { path: 'timetable', component: TimetableComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -59,7 +64,9 @@ const appRoutes: Routes = [
     LoginComponent,
     ToolBarComponent,
     TermComponent,
-    TimetableComponent
+    TimetableComponent,
+    RegisterComponent,
+    TextFilter
   ],
   imports: [
     BrowserModule,
@@ -80,7 +87,7 @@ const appRoutes: Routes = [
     CalendarWeekHoursViewModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      { enableTracing: false }
     )
   ],
   providers: [

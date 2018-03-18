@@ -69,9 +69,13 @@ export class SectionService {
         const notSelectedStart = notSelectedSection.startHour * 60 + notSelectedSection.startMinute;
         const notSelectedEnd = notSelectedSection.endHour * 60 + notSelectedSection.endMinute;
 
-        if (notSelectedStart < selectedEnd && notSelectedEnd > selectedStart) {
-          notSelectedSection.conflict += 'Time conflict!';
-        }
+        notSelectedSection.daysOfWeek.forEach((notSelectedDay) => {
+          selectedSection.daysOfWeek.forEach((selectedDay) => {
+            if (notSelectedDay === selectedDay && notSelectedStart < selectedEnd && notSelectedEnd > selectedStart) { 
+              notSelectedSection.conflict += 'Time conflict!';
+            }
+          })
+        });
 
         if (notSelectedSection.subject === selectedSection.subject
           && notSelectedSection.courseNumber === selectedSection.courseNumber

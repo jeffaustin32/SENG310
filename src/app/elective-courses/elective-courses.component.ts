@@ -46,6 +46,9 @@ export class ElectiveCoursesComponent implements OnInit {
     dialogRef.afterClosed().subscribe((filter: Filter) => {
       this.filter = filter;
       this.applyFilters();
+      this.sections = this.sections.filter((section: Section) => {
+        return !section.registered && !section.required && !section.selected;
+      });
     });
   }
 

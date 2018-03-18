@@ -1,5 +1,5 @@
 <div class="column">
-  <app-required-courses></app-required-courses>
+  <app-required-courses (sectionMouseEnter)="onMouseEnter($event)" (sectionMouseLeave)="onMouseLeave($event)"></app-required-courses>
   <app-elective-courses (sectionMouseEnter)="onMouseEnter($event)" (sectionMouseLeave)="onMouseLeave($event)"></app-elective-courses>
 </div>
 

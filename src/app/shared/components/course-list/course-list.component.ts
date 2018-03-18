@@ -55,18 +55,10 @@ export class CourseListComponent implements OnChanges {
   }
 
   onMouseEnter(section: Section) {
-    if (section.conflict) {
-      return;
-    }
-
     this.sectionMouseEnter.emit(section);
   }
 
   onMouseLeave(section: Section) {
-    if (section.conflict) {
-      return;
-    }
-
     this.sectionMouseLeave.emit(section);
   }
 

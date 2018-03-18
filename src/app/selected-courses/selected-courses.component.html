@@ -4,6 +4,6 @@
     <app-course-list [sections]="sections" [selectedPanel]="true"></app-course-list>
   </div>
   <div class="footer">
-    <button mat-raised-button color="accent" style="width:100%">Register</button>
+    <button mat-raised-button color="accent" style="width:100%" [disabled]="sections.length === 0" (click)="onRegisterClick()" [matTooltip]="'Register for selected sections'">Register</button>
   </div>
 </section>

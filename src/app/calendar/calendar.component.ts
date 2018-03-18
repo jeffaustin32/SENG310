@@ -67,7 +67,7 @@ export class CalendarComponent implements OnInit {
             start: startDate,
             end: endDate,
             id: section.crn,
-            title: `${section.subject}${section.courseNumber}`,
+            title: `${section.subject}${section.courseNumber} - ${section.type}${section.sectionNumber}`,
             color: section.registered ? colors.registered : colors.selected
           });
         });
@@ -114,7 +114,9 @@ export class CalendarComponent implements OnInit {
         }
       });
 
-      this.events.splice(index, 1);
+      if (foundOccurence) {
+        this.events.splice(index, 1);
+      }
     }
 
     this.refresh.next();
