@@ -110,7 +110,7 @@ export class CalendarComponent implements OnInit {
       foundOccurence = false;
 
       const index = this.events.findIndex((event: CalendarEvent) => {
-        if (event.id === section.crn) {
+        if (event.id === section.crn && !section.selected) {
           foundOccurence = true;
           return true;
         }

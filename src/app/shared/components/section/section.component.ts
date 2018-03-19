@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { SectionService } from '../../services/section.service';
 import { Section } from '../../models/section.model';
 
@@ -8,12 +8,14 @@ import { Section } from '../../models/section.model';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent {
+  @Output('sectionAdded') sectionAdded: EventEmitter<null> = new EventEmitter();
   @Input() section: Section;
 
   constructor(private sectionService: SectionService) { }
 
   add(section: Section): void {
     this.sectionService.add(section);
+    this.sectionAdded.emit();
   }
 
   remove(section: Section): void {
