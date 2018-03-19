@@ -1,24 +1,32 @@
+<div style="display: flex" *ngIf="search">
+  <input #courseSearch type="text" [(ngModel)]="searchValue" placeholder="Search courses" style="width: 100%; flex:1; line-height:28px; padding-left:10px; border: none; border-bottom: 1px solid #dcdcdc; background-color:#f1f1f1"
+  />
+  <mat-icon class="search">search</mat-icon>
+</div>
+
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let course of courses">
+  <mat-expansion-panel *ngFor="let course of courses | coursePipe:searchValue">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <span style="flex: 1; justify-content: center; line-height: 24px;">{{ course.subject }}{{ course.number }}</span>
-        <mat-icon class="info" (click)="getInfo($event, course)">info_circle_outline</mat-icon>
-        <mat-icon class="warning" *ngIf="course.missingSection" matTooltip="Missing linked section!">warning</mat-icon>
+        <div style="justify-content: center; line-height: 24px; margin-right:5px">{{ course.subject }}{{ course.number }}</div>
+        <mat-icon class="info" style="overflow: hidden" (click)="getInfo($event, course)">info_circle_outline</mat-icon>
+        <mat-icon class="warning" style="overflow: hidden" *ngIf="course.missingSection" matTooltip="Missing linked section!">warning</mat-icon>
+        <div style="flex: 1"></div>
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <app-section *ngFor="let section of course.sections" [section]="section" (sectionAdded)="onMouseLeave(section)" (mouseleave)="onMouseLeave(section)" (mouseenter)="onMouseEnter(section)"></app-section>
+    <app-section *ngFor="let section of course.sections" [section]="section" (sectionAdded)="onMouseLeave(section)" (mouseleave)="onMouseLeave(section)"
+      (mouseenter)="onMouseEnter(section)"></app-section>
   </mat-expansion-panel>
 </mat-accordion>
 
 <div class="noCourses" *ngIf="courses.length === 0">
-  
-    <div style="width: 48px">
-      <mat-icon>sentiment_dissatisfied</mat-icon>
-    </div>
-    <div class="noCoursesText">
-      No courses
-    </div>
-  
+
+  <div style="width: 48px">
+    <mat-icon>sentiment_dissatisfied</mat-icon>
+  </div>
+  <div class="noCoursesText">
+    No courses
+  </div>
+
 </div>

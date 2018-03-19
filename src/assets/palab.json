@@ -343,50 +343,6 @@
         "crn": 30699
     },
     {
-        "subject": "CHEM",
-        "courseNumber": "222",
-        "courseLevel": "l200",
-        "required": false,
-        "registered": false,
-        "selected": false,
-        "conflict": "",
-        "daysOfWeek": [
-            2,
-            3,
-            5
-        ],
-        "startHour": 9,
-        "startMinute": 30,
-        "endHour": 10,
-        "endMinute": 20,
-        "type": "A",
-        "sectionNumber": "01",
-        "waitlistCount": 0,
-        "linked": true,
-        "crn": 30070
-    },
-    {
-        "subject": "CHEM",
-        "courseNumber": "222",
-        "courseLevel": "l200",
-        "required": false,
-        "registered": false,
-        "selected": false,
-        "conflict": "",
-        "daysOfWeek": [
-            5
-        ],
-        "startHour": 13,
-        "startMinute": 30,
-        "endHour": 17,
-        "endMinute": 20,
-        "type": "B",
-        "sectionNumber": "02",
-        "waitlistCount": 1,
-        "linked": true,
-        "crn": 30072
-    },
-    {
         "subject": "ENGR",
         "courseNumber": "240",
         "courseLevel": "l200",

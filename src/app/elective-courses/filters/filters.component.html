@@ -7,22 +7,6 @@
     <mat-tab label="Subjects / Courses">
 
       <div style="display: flex; flex-direction: column">
-
-        <mat-form-field style="margin-top: 12px;">
-          <input matInput placeholder="Course Number" [(ngModel)]="filter.courseNumber">
-        </mat-form-field>
-
-        <div style="display: flex; margin-top: 12px">
-          <div>Course Level:</div>
-          <section style="padding-left:10px;">
-            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l100">100</mat-checkbox>
-            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l200">200</mat-checkbox>
-            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l300">300</mat-checkbox>
-            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l400">400</mat-checkbox>
-            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l500">500+</mat-checkbox>
-          </section>
-        </div>
-
         <div class="panel" style="margin-top:24px">
           <div class="header" style="display: flex">
             <span style="flex: 1">Subjects</span>
@@ -35,10 +19,21 @@
           </div>
 
           <mat-selection-list dense style="max-height: 300px; overflow-y: auto;" #subjectList>
-            <mat-list-option *ngFor="let subject of filter.subjects | textFilter:subjectFilter.value" [selected]="subject.selected" (selectionChange)="subject.selected = $event.selected; subjectClicked($event)">
+            <mat-list-option *ngFor="let subject of filter.subjects | subjectPipe:subjectFilter.value" [selected]="subject.selected" (selectionChange)="subject.selected = $event.selected; subjectClicked($event)">
               <span style="flex: 1">{{ subject.name }}</span>
             </mat-list-option>
           </mat-selection-list>
+        </div>
+
+        <div style="display: flex; margin-top: 24px; margin-bottom: 16px;">
+          <div>Course Level:</div>
+          <section style="padding-left:10px;">
+            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l100">100</mat-checkbox>
+            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l200">200</mat-checkbox>
+            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l300">300</mat-checkbox>
+            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l400">400</mat-checkbox>
+            <mat-checkbox color="primary" class="example-margin" [(ngModel)]="filter.courseLevel.l500">500+</mat-checkbox>
+          </section>
         </div>
       </div>
 

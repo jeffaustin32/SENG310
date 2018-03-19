@@ -2,10 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Subject } from '../models/subject.model';
 
 @Pipe({
-    name: 'textFilter',
+    name: 'subjectPipe',
     pure: false
 })
-export class TextFilter implements PipeTransform {
+export class SubjectPipe implements PipeTransform {
     transform(subjects: Subject[], input: string): any {
         if (!subjects || !input) {
             return subjects;

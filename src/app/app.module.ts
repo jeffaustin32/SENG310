@@ -34,7 +34,8 @@ import { SectionService } from './shared/services/section.service';
 import { SubjectsService } from './shared/services/subjects.service';
 
 // Pipes
-import { TextFilter } from './shared/pipes/text.pipe';
+import { CoursePipe } from './shared/pipes/course.pipe';
+import { SubjectPipe } from './shared/pipes/subject.pipe';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -66,7 +67,8 @@ const appRoutes: Routes = [
     TermComponent,
     TimetableComponent,
     RegisterComponent,
-    TextFilter
+    CoursePipe,
+    SubjectPipe
   ],
   imports: [
     BrowserModule,

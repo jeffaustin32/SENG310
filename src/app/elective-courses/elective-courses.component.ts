@@ -31,9 +31,6 @@ export class ElectiveCoursesComponent implements OnInit {
 
       this.allSections = sections;
       this.applyFilters();
-      this.sections = this.sections.filter((section: Section) => {
-        return !section.registered && !section.required && !section.selected;
-      });
     });
   }
 
@@ -46,41 +43,42 @@ export class ElectiveCoursesComponent implements OnInit {
     dialogRef.afterClosed().subscribe((filter: Filter) => {
       this.filter = filter;
       this.applyFilters();
-      this.sections = this.sections.filter((section: Section) => {
-        return !section.registered && !section.required && !section.selected;
-      });
     });
   }
 
   applyFilters() {
     this.sections = this.allSections.filter((section: Section) => {
-      let display = true;
+
+      if (section.registered || section.required || section.selected) {
+        return false;
+      }
+
       // Apply Course number filter
       if (this.filter.courseNumber && this.filter.courseNumber !== section.courseNumber) {
-        display = false;
+        return false;
       }
 
       // Apply Course level filter
       if (this.filter.courseLevel[section.courseLevel] === false) {
-        display = false;
+        return false;
       }
 
       // Apply Day of week filter
       section.daysOfWeek.forEach((day: number) => {
         if (day === 0 && !this.filter.dayOfWeek.sun) {
-          display = false;
+          return false;
         } else if (day === 1 && !this.filter.dayOfWeek.mon) {
-          display = false;
+          return false;
         } else if (day === 2 && !this.filter.dayOfWeek.tue) {
-          display = false;
+          return false;
         } else if (day === 3 && !this.filter.dayOfWeek.wed) {
-          display = false;
+          return false;
         } else if (day === 4 && !this.filter.dayOfWeek.thu) {
-          display = false;
+          return false;
         } else if (day === 5 && !this.filter.dayOfWeek.fri) {
-          display = false;
+          return false;
         } else if (day === 6 && !this.filter.dayOfWeek.sat) {
-          display = false;
+          return false;
         }
       });
 
@@ -94,7 +92,7 @@ export class ElectiveCoursesComponent implements OnInit {
 
         const sectionStart = (section.startHour * 60) + section.startMinute;
         if (sectionStart < filterStart) {
-          display = false;
+          return false;
         }
       }
 
@@ -108,7 +106,7 @@ export class ElectiveCoursesComponent implements OnInit {
 
         const sectionEnd = (section.endHour * 60) + section.endMinute;
         if (sectionEnd > filterEnd) {
-          display = false;
+          return false;
         }
       }
 
@@ -116,12 +114,12 @@ export class ElectiveCoursesComponent implements OnInit {
       this.filter.subjects.forEach((subject: Subject) => {
         if (section.subject === subject.abr) {
           if (!subject.selected) {
-            display = false;
+            return false;
           }
         }
       });
 
-      return display;
+      return true;
     });
   }
 
