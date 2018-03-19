@@ -7,12 +7,12 @@ import { Section } from '../shared/models/section.model';
 
 const colors: any = {
   registered: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  },
-  selected: {
     primary: '#1e90ff',
     secondary: '#D1E8FF'
+  },
+  selected: {
+    primary: '#e3bc08',
+    secondary: '#FDF1BA'
   },
   hover: {
     primary: '#e3bc08',
@@ -23,6 +23,8 @@ const colors: any = {
     secondary: '#FDF1BA'
   }
 };
+
+
 
 @Component({
   selector: 'app-calendar',
