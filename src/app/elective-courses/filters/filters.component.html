@@ -14,8 +14,8 @@
           </div>
 
           <div style="display: flex;">
-            <input #subjectFilter type="text" placeholder="Filter subjects" [(ngModel)]="value" style="flex:1; line-height:28px; padding-left:10px; border: none; border-bottom: 1px solid #dcdcdc;"
-            />
+            <input #subjectFilter type="text" placeholder="Filter subjects" [(ngModel)]="value" style="flex:1; line-height:28px; padding-left:10px; border: none; border-bottom: 1px solid #dcdcdc; background-color:#f1f1f1"/>
+            <mat-icon class="search">search</mat-icon>
           </div>
 
           <mat-selection-list dense style="max-height: 300px; overflow-y: auto;" #subjectList>

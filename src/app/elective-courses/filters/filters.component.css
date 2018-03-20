@@ -8,3 +8,11 @@
 .example-margin {
     margin: 0 10px;
 }
+
+mat-icon.search {
+    color: #a2a2a2;
+    padding: 3px 2px;
+    border-bottom: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
+    background-color: #f1f1f1;
+}
