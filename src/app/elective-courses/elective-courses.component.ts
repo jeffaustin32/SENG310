@@ -48,6 +48,7 @@ export class ElectiveCoursesComponent implements OnInit {
 
   applyFilters() {
     this.sections = this.allSections.filter((section: Section) => {
+      let keep = true;
 
       if (section.registered || section.required || section.selected) {
         return false;
@@ -66,19 +67,19 @@ export class ElectiveCoursesComponent implements OnInit {
       // Apply Day of week filter
       section.daysOfWeek.forEach((day: number) => {
         if (day === 0 && !this.filter.dayOfWeek.sun) {
-          return false;
+            keep = false;
         } else if (day === 1 && !this.filter.dayOfWeek.mon) {
-          return false;
+            keep = false;
         } else if (day === 2 && !this.filter.dayOfWeek.tue) {
-          return false;
+            keep = false;
         } else if (day === 3 && !this.filter.dayOfWeek.wed) {
-          return false;
+            keep = false;
         } else if (day === 4 && !this.filter.dayOfWeek.thu) {
-          return false;
+            keep = false;
         } else if (day === 5 && !this.filter.dayOfWeek.fri) {
-          return false;
+            keep = false;
         } else if (day === 6 && !this.filter.dayOfWeek.sat) {
-          return false;
+            keep = false;
         }
       });
 
@@ -114,13 +115,14 @@ export class ElectiveCoursesComponent implements OnInit {
       this.filter.subjects.forEach((subject: Subject) => {
         if (section.subject === subject.abr) {
           if (!subject.selected) {
-            return false;
+            keep = false;
           }
         }
       });
 
-      return true;
+      return keep;
     });
+
   }
 
   onMouseEnter(section: Section) {
